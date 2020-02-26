@@ -1,0 +1,24 @@
+<h1>The Employee page</h1>
+
+<img src=<%=@employee.img_url%> alt="profile image" height="100" >
+
+<label>First name: <%= @employee.first_name %></label><br>
+<label>Last name: <%= @employee.last_name %></label><br>
+<%if @employee.alias%>
+  <label>Alias: <%= @employee.alias %></label><br>
+<%end%>
+<label>Title: <%= @employee.title %></label><br>
+<label>Office: <%= @employee.office%></label><br>
+<label>Dog: <%= @employee.dog.name %></label><br>
+
+<%= form_with model: @employee, method: :delete do |f| %>
+  <%= f.submit "Delete"%>
+<% end %>
+
+<%= form_for(@employee, url: edit_employee_path(@employee), method: :get) do |f| %>
+  <%= f.submit "Edit"%>
+<% end %>
+
+
+
+
