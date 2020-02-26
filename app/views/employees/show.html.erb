@@ -1,13 +1,14 @@
 <h1><%= @employee.first_name + " " + @employee.last_name %></h1>
-<h4>Alias:</h4>
-<p><%= @employee.alias %></p>
-<h4>Title:</h4>
-<p><%= @employee.title %></p>
-<h4>Office:</h4>
-<p><%= @employee.office %></p>
-<h4>Dog:</h4>
-<p><%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
+<img src=<%= @employee.img_url %> alt=<%=@employee.first_name + " photo"%>>
+
+<p><strong>Alias:</strong> <%= @employee.alias %></p>
+<p><strong>Title:</strong> <%= @employee.title %></p>
+<p><strong>Office:</strong> <%= @employee.office %></p>
+<p><strong>Dog: </strong> <%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
 
 <button>
     <%=link_to "Edit", edit_employee_path(@employee) %> 
+</button>
+<button>
+    <%=link_to "Employees", employees_path %> 
 </button>
