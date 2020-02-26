@@ -1,0 +1,30 @@
+<label>Fist Name:</label>
+<%= @employee.first_name %>
+<br/>
+<label>Last Name:</label>
+<%= @employee.last_name %>
+<br/>
+<label>Profile Picture:</label>
+<br/>
+<img src='<%= @employee.img_url%>'>
+<br/>
+<label>Alias:</label>
+<%= @employee.alias %>
+<br/>
+<label>Title:</label>
+<%= @employee.title %>
+<br/>
+<label>Office:</label>
+<%= @employee.office %>
+<br/>
+<label>Last Name:</label>
+<%= @employee.last_name %>
+<br/>
+<label>Dog:</label>
+<% @dog = @dogs.find(@employee.dog_id) %>
+<%= @dog.name %>
+
+<%= form_for @employee, method: :delete do |f| %>
+    <%= f.submit value="Fire Employee!"%>
+<% end %>
+
