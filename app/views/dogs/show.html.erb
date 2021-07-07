@@ -1,0 +1,22 @@
+<h3><%= @dog.name %></h3>
+<label>Breed:</label>
+<h5> <%= @dog.breed %></h5>
+<label>Age:</label>
+<h5> <%= @dog.age %></h5>
+
+<%# @employees.each do |e| %>
+    <!-- <li> -->
+        <%#= e.first_name if e.dog_id == @dog.id %>
+    <!-- </li> -->
+    
+<%# end %>
+
+
+<%# e.first_name if e.dog_id == @dog.id  %>
+
+<% @dog.employees.each do |e| %>
+    <li>
+    <%= link_to e.first_name, employee_path(e) %>
+    </li>
+<% end %>
+
